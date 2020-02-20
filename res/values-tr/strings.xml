@@ -81,4 +81,9 @@
     <string name="lockscreen_setup_title" product="default">Telefonunuzu koruyun</string>
     <string name="lockscreen_setup_summary"><b>Bu cihazı koruyun</b> ve ekran kilidini açmak için bir PIN, desen ya da şifreyi gerekli kılın.</string>
     <string name="lockscreen_setup_screen_lock_setup">Kur</string>
+
+<!-- e.foundation -->
+    <string name="e_account_manager_setup_title"><b>/e/</b> hesabı</string>
+    <string name="e_account_manager_setup_summary">/e/ kimliklerinizi hesap yöneticisine kaydedin, böylece bunları daha sonra başka uygulamalarda yeniden kullanabilirsiniz.</string>
+    <string name="e_account_manager_setup_configure">Kur</string>
 </resources>

@@ -102,4 +102,8 @@
     <string name="lockscreen_setup_summary"><b>Protect this device</b> and require a PIN, pattern, or password to unlock the screen</string>
     <string name="lockscreen_setup_screen_lock_setup">Set up</string>
 
+    <!-- e.foundation -->
+    <string name="e_account_manager_setup_title"><b>/e/</b> account</string>
+    <string name="e_account_manager_setup_summary">Save your /e/ identifiers in the account manager, therefore you can simply reuse them later in other applications.</string>
+    <string name="e_account_manager_setup_configure">Set up</string>
 </resources>

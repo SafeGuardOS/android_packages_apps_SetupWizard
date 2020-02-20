@@ -81,4 +81,9 @@
     <string name="lockscreen_setup_title" product="default">Proteggi il tuo telefono</string>
     <string name="lockscreen_setup_summary"><b>Proteggi il dispositivo</b> e richiedi PIN, sequenza o password per sbloccare schermo</string>
     <string name="lockscreen_setup_screen_lock_setup">Configura</string>
+   
+    <!-- e.foundation -->
+    <string name="e_account_manager_setup_title">Account <b>/e/</b></string>
+    <string name="e_account_manager_setup_summary">Salva i tuoi identificativi /e/ nel gestore dell\'account, così in futuro potrai riutilizzarli con semplicità in altre applicazioni.</string>
+    <string name="e_account_manager_setup_configure">Imposta</string>
 </resources>

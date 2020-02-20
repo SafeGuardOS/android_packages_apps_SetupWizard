@@ -102,7 +102,8 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
     @Override
     public void onResume() {
         super.onResume();
-        refreshLocationMode();
+         setLocationMode(Settings.Secure.LOCATION_MODE_HIGH_ACCURACY);
+	refreshLocationMode();
     }
 
     @Override
@@ -137,7 +138,7 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
 
     private void refreshLocationMode() {
         int mode = Settings.Secure.getInt(mContentResolver, Settings.Secure.LOCATION_MODE,
-                Settings.Secure.LOCATION_MODE_OFF);
+                Settings.Secure.LOCATION_MODE_HIGH_ACCURACY);
 
         if (mCurrentMode != mode) {
             mCurrentMode = mode;

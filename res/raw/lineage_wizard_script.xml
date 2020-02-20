@@ -55,17 +55,24 @@
 
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_LOCATION_SETTINGS;end" id="location_settings">
         <result wizard:action="lineage_settings" />
+	<result wizard:action="fingerprint_settings" /> 
     </WizardAction>
 
+    <!--
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_SETTINGS;end" id="lineage_settings">
         <result wizard:action="fingerprint_settings" />
     </WizardAction>
+    -->
 
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_FINGERPRINT_SETTINGS;end" id="fingerprint_settings">
         <result wizard:action="lockscreen_settings" />
     </WizardAction>
 
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_LOCKSCREEN_SETTINGS;end" id="lockscreen_settings">
+        <result wizard:action="e_account_manager_settings" />
+    </WizardAction>
+
+    <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.E_ACCOUNT_MANAGER_SETTINGS;end" id="e_account_manager_settings">
         <result wizard:action="finish" />
     </WizardAction>
 

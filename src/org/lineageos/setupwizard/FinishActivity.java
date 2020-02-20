@@ -59,6 +59,12 @@ public class FinishActivity extends BaseSetupWizardActivity {
 
     private volatile boolean mIsFinishing = false;
 
+     // Component name of default weather provider.
+    private static final String OWM =
+            "org.lineageos.openweathermapprovider/org.lineageos.openweathermapprovider"
+                    + ".OpenWeatherMapProviderService";
+
+    private static final int THEME = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,8 +104,19 @@ public class FinishActivity extends BaseSetupWizardActivity {
     private void finishSetup() {
         if (!mIsFinishing) {
             mIsFinishing = true;
-            setupRevealImage();
-        }
+            //setupRevealImage();// /e/ remove
+            // eelo 20180527 - fp - end animation cannot be displayed smoothly on some devices (like zerofltexx)
+            // Thus byass animation process.
+            // eelo add
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    completeSetup();
+                }
+            });
+            // /e/
+
+	}
     }
 
     private void startFinishSequence() {
@@ -168,7 +185,9 @@ public class FinishActivity extends BaseSetupWizardActivity {
         if (mEnableAccessibilityController != null) {
             mEnableAccessibilityController.onDestroy();
         }
-        handleEnableMetrics(mSetupWizardApp);
+        setupWeatherProvider();
+        setupTheme();
+	handleEnableMetrics(mSetupWizardApp);
         handleNavKeys(mSetupWizardApp);
         final WallpaperManager wallpaperManager =
                 WallpaperManager.getInstance(mSetupWizardApp);
@@ -179,14 +198,19 @@ public class FinishActivity extends BaseSetupWizardActivity {
         startActivityForResult(intent, NEXT_REQUEST);
     }
 
+    private void setupWeatherProvider() {
+        LineageSettings.Secure.putString(getContentResolver(),
+                        LineageSettings.Secure.WEATHER_PROVIDER_SERVICE, OWM);
+    }
+
+    private void setupTheme() {
+        LineageSettings.System.putInt(getContentResolver(),
+                        LineageSettings.System.BERRY_GLOBAL_STYLE, THEME);
+    }
+
     private static void handleEnableMetrics(SetupWizardApp setupWizardApp) {
-        Bundle privacyData = setupWizardApp.getSettingsBundle();
-        if (privacyData != null
-                && privacyData.containsKey(KEY_SEND_METRICS)) {
-            LineageSettings.Secure.putInt(setupWizardApp.getContentResolver(),
-                    LineageSettings.Secure.STATS_COLLECTION, privacyData.getBoolean(KEY_SEND_METRICS)
-                            ? 1 : 0);
-        }
+    	LineageSettings.Secure.putInt(setupWizardApp.getContentResolver(),
+            LineageSettings.Secure.STATS_COLLECTION, 0);
     }
 
     private static void handleNavKeys(SetupWizardApp setupWizardApp) {

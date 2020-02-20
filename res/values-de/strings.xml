@@ -81,4 +81,10 @@
     <string name="lockscreen_setup_title" product="default">Schützen Sie Ihr Telefon</string>
     <string name="lockscreen_setup_summary"><b>Gerät schützen</b> und PIN, Muster oder Passwort zur Display-Entsperrung verwenden</string>
     <string name="lockscreen_setup_screen_lock_setup">Einrichten</string>
+
+    <!-- e.foundation -->
+    <string name="e_account_manager_setup_title">/e/ Konto</string>
+    <string name="e_account_manager_setup_summary">Speichere Deine /e/ Anmeldedaten im Kontomanager - so kannst Du diese später in anderen Apps wiederverwenden ohne sie erneut einzugeben.</string>
+    <string name="e_account_manager_setup_configure">Einrichten</string>
+
 </resources>
